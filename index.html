@@ -1384,7 +1384,7 @@
         <div class="nav-container">
           <!-- Logo centralizado conforme pedido -->
           <div class="logo">
-            <img src="images/logo/privacy_logo.svg" alt="Privacy Logo" style="height: 100%; width: auto; object-fit: contain;">
+            <img src="images/logo/logo1/logo.privacy1.png" alt="Privacy Logo" style="height: 100%; width: auto; object-fit: contain;">
           </div>
           <div class="right-container">
             <div class="search-container">
@@ -1409,41 +1409,47 @@
     </nav>
   </header>
   <main>
-    <div class="main-container">
-      <div class="profile-section">
-        <div class="cover-section">
-          <div class="cover-image">
-            <img src="images/banner.png" alt="Imagem de capa" width="640" height="350" fetchpriority="high" decoding="async">
-            <div class="stats">
-              <span><i class="far fa-image"></i> 354</span>
-              <span><i class="fas fa-video"></i> 148</span>
-              <span><i class="far fa-heart"></i> 20.2K</span>
-            </div>
-          </div>
+    <!-- Capa (largura total) -->
+    <div class="cover-wrapper">
+      <div class="cover-image">
+        <img src="images/banner.png" alt="Imagem de capa" fetchpriority="high" decoding="async">
+        <div class="stats">
+          <span><i class="far fa-image"></i> 354</span>
+          <span><i class="fas fa-video"></i> 148</span>
+          <span><i class="far fa-heart"></i> 20.2K</span>
+        </div>
+      </div>
+    </div>
 
+    <!-- Layout principal em duas colunas -->
+    <div class="main-container">
+      <div class="two-column-layout">
+
+        <!-- ===== COLUNA ESQUERDA: Perfil + Bio + Planos ===== -->
+        <div class="left-col">
+          <!-- Informações do perfil -->
           <div class="profile-info">
             <div class="profile-image">
-               <img src="images/perfil1.png" alt="Foto de perfil" width="250" height="250" loading="eager" decoding="async">
+              <img src="images/perfil1.png" alt="Foto de perfil" width="90" height="90" loading="eager" decoding="async">
             </div>
             <div class="profile-text">
               <div class="profile-name">
-                 Sofia
+                Sofia
                 <span class="verified">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" aria-label="Verificado">
-                    <path fill="#ff6b3d" d="M190.6 71.4C203 47.9 227.7 32 256 32s53 15.9 65.4 39.4c3.6 6.8 11.5 10.1 18.8 7.8c25.4-7.8 54.1-1.6 74.1 18.4s26.2 48.7 18.4 74.1c-2.3 7.3 1 15.2 7.8 18.8C464.1 203 480 227.7 480 256s-15.9 53-39.4 65.4c-6.8 3.6-10.1 11.5-7.8 18.8c7.8 25.4 1.6 54.1-18.4 74.1s-48.7 26.2-74.1 18.4c-7.3-2.3-15.2 1-18.8 7.8C309 464.1 284.3 480 256 480s-53-15.9-65.4-39.4c-3.6-6.8-11.5-10.1-18.8-7.8c-25.4 7.8-54.1 1.6-74.1-18.4s-26.2-48.7-18.4 74.1c-2.3-7.3-1-15.2 7.8-18.8C47.9 309 32 284.3 32 256s15.9-53 39.4-65.4c6.8-3.6 10.1-11.5 7.8-18.8c-7.8-25.4-1.6-54.1 18.4-74.1s48.7-26.2 74.1-18.4c7.3 2.3 15.2-1 18.8-7.8zM256 0c-36.1 0-68 18.1-87.1 45.6c-33-6-68.3 3.8-93.9 29.4s-35.3 60.9-29.4 93.9C18.1 188 0 219.9 0 256s18.1 68 45.6 87.1c-6 33 3.8 68.3 29.4 93.9s60.9 35.3 93.9 29.4C188 493.9 219.9 512 256 512s68-18.1 87.1-45.6c33 6 68.3-3.8 93.9-29.4s35.3-60.9 29.4-93.9C493.9 324 512 292.1 512 256s-18.1-68-45.6-87.1c6-33-3.8-68.3-29.4-93.9s-60.9-35.3-93.9-29.4C324 18.1 292.1 0 256 0zM363.3 203.3c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L224 297.4l-52.7-52.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l64 64c6.2 6.2 16.4 6.2 22.6 0l128-128z">
-                    </path>
+                    <path fill="#ff6b3d" d="M190.6 71.4C203 47.9 227.7 32 256 32s53 15.9 65.4 39.4c3.6 6.8 11.5 10.1 18.8 7.8c25.4-7.8 54.1-1.6 74.1 18.4s26.2 48.7 18.4 74.1c-2.3 7.3 1 15.2 7.8 18.8C464.1 203 480 227.7 480 256s-15.9 53-39.4 65.4c-6.8 3.6-10.1 11.5-7.8 18.8c7.8 25.4 1.6 54.1-18.4 74.1s-48.7 26.2-74.1 18.4c-7.3-2.3-15.2 1-18.8 7.8C309 464.1 284.3 480 256 480s-53-15.9-65.4-39.4c-3.6-6.8-11.5-10.1-18.8-7.8c-25.4 7.8-54.1 1.6-74.1-18.4s-26.2-48.7-18.4-74.1c2.3-7.3-1-15.2-7.8-18.8C47.9 309 32 284.3 32 256s15.9-53 39.4-65.4c6.8-3.6 10.1-11.5 7.8-18.8c-7.8-25.4-1.6-54.1 18.4-74.1s48.7-26.2 74.1-18.4c7.3 2.3 15.2-1 18.8-7.8zM363.3 203.3c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L224 297.4l-52.7-52.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l64 64c6.2 6.2 16.4 6.2 22.6 0l128-128z"/>
                   </svg>
                 </span>
               </div>
-               <div class="profile-username">@sofiaofficial</div>
+              <div class="profile-username">@sofiaofficial</div>
             </div>
           </div>
-        </div>
 
-        <div class="profile-bio">
-          <div class="bio-container">
-            <p class="bio-text" id="bioText">
-              🔥 Sofia – Vazamento Exclusivo no Privacy 🔥
+          <!-- Bio -->
+          <div class="profile-bio">
+            <div class="bio-container">
+              <p class="bio-text" id="bioText">
+                🔥 Sofia – Vazamento Exclusivo no Privacy 🔥
 Conteúdo premium liberado por um valor MUITO abaixo do habitual.
 Corpo escultural entregue sem filtros:
 💦 Boquetes profundos e molhados que vão até o limite
@@ -1453,29 +1459,12 @@ Material que era restrito aos assinantes mais fiéis… agora acessível por tem
 Não perca a chance de ver a Sofia se entregando de verdade.
 👉 Entre agora e garanta o seu antes que volte ao valor original.
 😈 Quantidade limitada • Acesso imediato • 100% sem censura
-            </p>
-            <button class="bio-toggle" id="bioToggle">Mostrar mais</button>
-          </div>
-
-          <!-- Início: bloco de ícones de redes sociais (removido temporariamente)
-          <div class="social-links">
-            <div class="social-link twitter">
-              <i class="fab fa-twitter"></i>
-            </div>
-            <div class="social-link tiktok">
-              <i class="fab fa-tiktok"></i>
-            </div>
-            <div class="social-link instagram">
-              <i class="fab fa-instagram"></i>
-            </div>
-            <div class="social-link telegram">
-              <i class="fab fa-telegram"></i>
+              </p>
             </div>
           </div>
-          Fim: bloco de ícones de redes sociais -->
 
-          <!-- Novo painel de Assinaturas -->
-          <div class="pricing-panel">
+          <!-- Painel de Assinaturas -->
+          <div class="pricing-panel" id="plans-section">
             <h3>Assinaturas</h3>
             <div class="tag-popular">VEJA TUDO AGORA 🔥</div>
             <span class="mini-badge promo header-promo">Promocional</span>
@@ -1484,7 +1473,7 @@ Não perca a chance de ver a Sofia se entregando de verdade.
               <span class="plan-title">15 Dias</span>
               <span class="plan-price">R$ 9,90</span>
             </a>
-            <div class="perk-chip" aria-hidden="false" role="note">NÃO PERCA ESSA OFERTA!</div>
+            <div class="perk-chip" role="note">NÃO PERCA ESSA OFERTA!</div>
 
             <div class="trust-inline">
               <span><i class="fas fa-lock"></i> Pagamento 100% seguro</span>
@@ -1515,26 +1504,22 @@ Não perca a chance de ver a Sofia se entregando de verdade.
             </div>
           </div>
 
-
-
+          <!-- Contador de posts -->
           <div class="content-toggle">
-            <button class="toggle-btn disabled" data-type="posts" disabled="">
-              <span class="count">502</span> Posts
-            </button>
+            <span class="tab-plain"><span class="count">502</span> Posts.</span>
             <span class="separator">•</span>
-            <button class="toggle-btn active" data-type="videos">
-              <span class="count">148</span> Videos
-            </button>
+            <span class="tab-plain"><span class="count">148</span> Videos.</span>
             <span class="separator">•</span>
-            <button class="toggle-btn" data-type="photos">
-              <span class="count">354</span> Fotos
-            </button>
+            <span class="tab-plain"><span class="count">354</span> Fotos</span>
           </div>
+        </div>
 
-          <!-- Galeria estilo feed (2x2) -->
+        <!-- ===== COLUNA DIREITA: Feed de Imagens ===== -->
+        <div class="right-col">
           <section class="feed-gallery" id="feed-gallery" aria-label="Prévia de conteúdos">
             <div class="feed-grid">
-              <!-- Card 1 - Vídeo -->
+
+              <!-- Card 1 -->
               <article class="feed-card">
                 <header class="feed-header">
                   <img class="feed-avatar" src="images/perfil1.png" alt="Avatar da Sofia" loading="lazy" decoding="async">
@@ -1543,13 +1528,13 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                     <div class="feed-handle">@sofiaofficial</div>
                   </div>
                 </header>
-                <div class="feed-media scroller-trigger" onclick="scrollToPlans()">
+                <div class="feed-media" onclick="scrollToPlans()">
                   <img src="images/imagempagina1.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
-                    <div class="stats-pill">
-                      <span><i class="far fa-heart"></i> 67.4K</span>
-                      <span><i class="far fa-comment"></i> 1.9K</span>
-                    </div>
+                  <div class="stats-pill">
+                    <span><i class="far fa-heart"></i> 67.4K</span>
+                    <span><i class="far fa-comment"></i> 1.9K</span>
+                  </div>
                 </div>
                 <footer class="feed-footer">
                   <i class="far fa-heart"></i>
@@ -1558,7 +1543,7 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                 </footer>
               </article>
 
-              <!-- Card 3 - Foto -->
+              <!-- Card 2 -->
               <article class="feed-card">
                 <header class="feed-header">
                   <img class="feed-avatar" src="images/perfil1.png" alt="Avatar da Sofia" loading="lazy" decoding="async">
@@ -1567,12 +1552,12 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                     <div class="feed-handle">@sofiaofficial</div>
                   </div>
                 </header>
-                <div class="feed-media scroller-trigger" onclick="scrollToPlans()">
+                <div class="feed-media" onclick="scrollToPlans()">
                   <img src="images/imagempagina2.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
                   <div class="stats-pill">
-                    <span><i class="far fa-heart"></i> 67.4K</span>
-                    <span><i class="far fa-comment"></i> 1.9K</span>
+                    <span><i class="far fa-heart"></i> 89.6K</span>
+                    <span><i class="far fa-comment"></i> 7.1K</span>
                   </div>
                 </div>
                 <footer class="feed-footer">
@@ -1582,7 +1567,7 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                 </footer>
               </article>
 
-              <!-- Card 4 - Foto -->
+              <!-- Card 3 -->
               <article class="feed-card">
                 <header class="feed-header">
                   <img class="feed-avatar" src="images/perfil1.png" alt="Avatar da Sofia" loading="lazy" decoding="async">
@@ -1591,12 +1576,12 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                     <div class="feed-handle">@sofiaofficial</div>
                   </div>
                 </header>
-                <div class="feed-media scroller-trigger" onclick="scrollToPlans()">
+                <div class="feed-media" onclick="scrollToPlans()">
                   <img src="images/imagempagina3.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
                   <div class="stats-pill">
-                    <span><i class="far fa-heart"></i> 67.4K</span>
-                    <span><i class="far fa-comment"></i> 1.9K</span>
+                    <span><i class="far fa-heart"></i> 55.3K</span>
+                    <span><i class="far fa-comment"></i> 8.4K</span>
                   </div>
                 </div>
                 <footer class="feed-footer">
@@ -1605,7 +1590,15 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                   <i class="far fa-bookmark"></i>
                 </footer>
               </article>
+
             </div>
+          </section>
+        </div>
+        <!-- FIM COLUNA DIREITA -->
+
+      </div><!-- fim two-column-layout -->
+    </div><!-- fim main-container -->
+
           </section>
         </div>
       </div>
