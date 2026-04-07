@@ -457,56 +457,106 @@
 
     .top-bar {
       background: #ff6b3d;
-      padding: 3px 0;
-      margin-bottom: 0;
+      padding: 6px 0;
     }
 
     .top-bar-content {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
+      justify-content: flex-start; /* Logo à esquerda */
+      gap: 15px;
       color: white;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 6px 15px;
+      padding: 0 15px;
     }
+
+
     .promo-logo {
-      height: 20px;
+      height: 22px;
       width: auto;
     }
-    .privacy-logo {
-      background: none !important;
-      padding: 0 !important;
-      font-size: 13px !important;
-    }
 
-    .top-bar-content span {
-      font-size: 12px;
-    }
-
-    /* Estiliza o aviso de promoção para ficar mais profissional */
+    /* Pílula de promoção no topo */
     .privacy-logo {
       display: inline-flex;
       align-items: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.2) !important;
+      padding: 4px 14px !important;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      font-weight: 600;
-      letter-spacing: 0.2px;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      color: white !important;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
+
+    /* Navbar branca com logo centralizado */
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 64px;
+      background-color: #fff;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    .right-container {
+      margin-left: auto; /* Empurra tudo para a direita */
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background: #f3f4f6;
+      border-radius: 8px;
+      padding: 4px 10px;
+      width: 200px;
+    }
+
+    .search-container input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    /* Estatísticas da Capa (Banner) conforme Image 2 */
     .cover-image { position: relative; }
     .cover-image .stats {
       position: absolute; bottom: 15px; right: 20px;
       display: flex; align-items: center; gap: 15px;
       color: #fff; font-size: 14px; font-weight: 700;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
     }
     .cover-image .stats span { display: flex; align-items: center; gap: 6px; }
-    .cover-image .stats i { font-size: 16px; }
+    .cover-image .stats i { font-size: 18px; color: #fff; }
+
+    /* Responsividade mobile */
+    @media (max-width: 768px) {
+      .search-container { display: none; } /* Esconde busca no mobile */
+      .nav-container { height: 60px; padding: 0 10px; }
+      .logo { height: 35px; z-index: 10; }
+      .top-bar-content { justify-content: center; } /* Centraliza no mobile */
+      .promo-logo { display: none; } /* Oculta logo pequeno no mobile para focar no badge */
+      .right-container { gap: 10px; }
+    }
 
     /* Pulse para indicador verde das notificações */
     @keyframes pulse {
@@ -1310,47 +1360,40 @@
     <nav class="navbar">
       <div class="top-bar">
         <div class="top-bar-content">
-          <img src="images/Untitled%20image%20%2825%29.png" width="90px" alt="Privacy Logo" class="promo-logo">
-
-          <!-- Conteúdo Principal -->
-          <div class="privacy-logo" id="privacy-logo">ESSA PROMOÇÃO É VÁLIDA ATÉ 03/09/2025</div>
-          <script type="f6968d3933020259f586cb25-text/javascript">
-    function getFormattedDate(daysAhead = 3) {
-      const today = new Date();
-      today.setDate(today.getDate() + daysAhead);
-      const dd = String(today.getDate()).padStart(2, '0');
-      const mm = String(today.getMonth() + 1).padStart(2, '0');
-      const yyyy = today.getFullYear();
-      return `${dd}/${mm}/${yyyy}`;
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const banner = document.getElementById("privacy-logo");
-      const expirationDate = getFormattedDate(0); 
-      banner.textContent = `ESSE CONTEÚDO É VÁLIDO ATÉ ${expirationDate}`;
-    });
-  </script>
+          <img src="images/Untitled%20image%20%2825%29.png" alt="Privacy Logo" class="promo-logo">
+          <div class="privacy-logo" id="privacy-logo">ESSE CONTEÚDO É VÁLIDO ATÉ 00/00/0000</div>
+          <script type="text/javascript">
+            function getFormattedDate(daysAhead = 0) {
+              const today = new Date();
+              today.setDate(today.getDate() + daysAhead);
+              const dd = String(today.getDate()).padStart(2, '0');
+              const mm = String(today.getMonth() + 1).padStart(2, '0');
+              const yyyy = today.getFullYear();
+              return `${dd}/${mm}/${yyyy}`;
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+              const banner = document.getElementById("privacy-logo");
+              const expirationDate = getFormattedDate(0); 
+              banner.textContent = `ESSE CONTEÚDO É VÁLIDO ATÉ ${expirationDate}`;
+            });
+          </script>
         </div>
         <div class="nav-container">
+          <!-- Logo centralizado conforme pedido -->
           <div class="logo">
-            <img src="images/Untitled%20image%20%2825%29.png" alt="Privacy Logo" width="120" height="auto" loading="eager" decoding="async" style="filter: brightness(0.2);">
+            <img src="images/Untitled%20image%20%2825%29.png" alt="Privacy Logo" style="height: 100%; filter: brightness(0.2);">
           </div>
           <div class="right-container">
             <div class="search-container">
-              <input type="text" placeholder="Pesquise aqui...">
-              <button class="search-button" title="Buscar">
-                <i class="fas fa-search"></i>
-              </button>
+              <i class="fas fa-search" style="color: #9ca3af; font-size: 13px;"></i>
+              <input type="text" placeholder="Pesquisar...">
             </div>
-            <div class="nav-icons">
-              <button class="icon-button" title="Adicionar">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="icon-button" title="Comentários">
-                <i class="fas fa-comment-alt"></i>
-              </button>
+            <div class="nav-icons" style="display: flex; gap: 12px; color: #4b5563;">
+              <i class="fas fa-plus" title="Adicionar" style="cursor: pointer;"></i>
+              <i class="fas fa-comment-alt" title="Comentários" style="cursor: pointer;"></i>
             </div>
           </div>
+        </div>
           <!-- Botão/globo do menu mobile removido temporariamente
           <button class="menu-mobile">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30.000001" preserveAspectRatio="xMidYMid meet">
@@ -1525,8 +1568,8 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                   <img src="images/imagempagina2.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
                   <div class="stats-pill">
-                    <span><i class="far fa-heart"></i> 89.6K</span>
-                    <span><i class="far fa-comment"></i> 7.1K</span>
+                    <span><i class="far fa-heart"></i> 67.4K</span>
+                    <span><i class="far fa-comment"></i> 1.9K</span>
                   </div>
                 </div>
                 <footer class="feed-footer">
@@ -1549,8 +1592,8 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                   <img src="images/imagempagina3.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
                   <div class="stats-pill">
-                    <span><i class="far fa-heart"></i> 55.3K</span>
-                    <span><i class="far fa-comment"></i> 8.4K</span>
+                    <span><i class="far fa-heart"></i> 67.4K</span>
+                    <span><i class="far fa-comment"></i> 1.9K</span>
                   </div>
                 </div>
                 <footer class="feed-footer">
