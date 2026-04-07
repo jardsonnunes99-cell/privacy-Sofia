@@ -23,7 +23,7 @@ body { font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', R
 @media (max-width: 768px) { .nav-container { height: 60px; padding: 0 15px; } .search-container, .nav-icons { display: none; } }
 
 /* ===== MAIN CONTENT ===== */
-.main-container { max-width: 640px; margin: 0; padding: 0 0 20px; }
+.main-container { max-width: 640px; margin: 0 auto; padding: 0 0 20px; }
 
 /* ===== COVER ===== */
 .cover-section { position: relative; }
@@ -105,8 +105,18 @@ body { font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', R
 .feed-footer i { font-size: 17px; cursor: pointer; transition: color 0.2s; }
 .feed-footer i:hover { color: #ff6b3d; }
 
-/* ===== INFO CONTAINER (vazio) ===== */
+/* ===== INFO CONTAINER ===== */
 .info-container { max-width: 640px; margin: 0 auto; padding: 0 16px 20px; }
+.faq-container { background: transparent; padding: 20px 0; }
+.faq-titulo { font-size: 24px; font-weight: 800; color: #ff6b3d; text-align: center; margin-bottom: 24px; }
+.faq-list { display: flex; flex-direction: column; gap: 16px; }
+.faq-item { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #fff; }
+.faq-question { width: 100%; background: none; border: none; padding: 16px; text-align: left; font-size: 14px; font-weight: 600; color: #374151; cursor: pointer; display: flex; align-items: center; gap: 12px; font-family: inherit; }
+.faq-icon { color: #ff6b3d; font-size: 18px; font-weight: 800; display: inline-block; width: 16px; text-align: center; }
+.faq-icon::after { content: "+"; }
+.faq-item.active .faq-icon::after { content: "−"; }
+.faq-answer { display: none; padding: 16px; font-size: 13px; color: #4b5563; text-align: center; background: #f9fafb; line-height: 1.5; border-top: 1px solid #f3f4f6; }
+.faq-item.active .faq-answer { display: block; }
 .footer-cta { max-width: 640px; margin: 0 auto 16px; padding: 0 16px; }
 .footer-plan { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: linear-gradient(180deg,#ff7a1a,#ff6b3d); color: #fff; border: none; border-radius: 12px; padding: 16px 20px; cursor: pointer; font-weight: 800; text-decoration: none !important; box-shadow: 0 8px 20px rgba(255,107,61,0.3); }
 .footer-plan .plan-title { font-size: 15px; }
