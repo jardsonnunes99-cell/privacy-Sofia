@@ -22,8 +22,8 @@ body { font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', R
 .icon-button:hover { background: #e5e7eb; }
 @media (max-width: 768px) { .nav-container { height: 60px; padding: 0 15px; } .search-container, .nav-icons { display: none; } }
 
-/* ===== MAIN CONTAINER ===== */
-.main-container { max-width: 640px; margin: 0 auto; padding: 0 0 20px; }
+/* ===== MAIN CONTENT ===== */
+.main-container { max-width: 640px; margin: 0; padding: 0 0 20px; }
 
 /* ===== COVER ===== */
 .cover-section { position: relative; }
