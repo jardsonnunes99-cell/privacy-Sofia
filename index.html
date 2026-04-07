@@ -986,10 +986,10 @@
     .feed-media .locked-media { backface-visibility: hidden; transform: translateZ(0); will-change: transform; }
   }
     .lock-bubble {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 68px; height: 68px; border-radius: 999px; background: rgba(255,255,255,0.92);
-      display: grid; place-items: center; box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-      color: #9ca3af; font-size: 22px;
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 54px; height: 54px; border-radius: 999px;
+      background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); color: #8e94a0; font-size: 20px;
     }
     @media (max-width: 600px) {
       .lock-bubble { box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
@@ -1360,11 +1360,10 @@
     <nav class="navbar">
       <div class="top-bar">
         <div class="top-bar-content">
-          <div class="privacy-logo" style="background: rgba(255,255,255,0.2); padding: 4px 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px;">
-            <img src="images/logo/logo2.png" alt="P" style="height: 14px; width: auto;">
-            <span style="color: white; font-weight: 700; font-size: 13px; text-transform: lowercase;">privacy</span>
+          <div class="privacy-top-badge" style="display: inline-flex; align-items: center; gap: 8px;">
+            <img src="images/logo/logo2.png" alt="P" style="height: 16px; width: auto;">
           </div>
-          <div class="privacy-logo" id="privacy-logo">ESSE CONTEÚDO É VÁLIDO ATÉ 00/00/0000</div>
+          <div class="privacy-logo" id="privacy-logo" style="background: rgba(255,255,255,0.15) !important;">ESSE CONTEÚDO É VÁLIDO ATÉ 00/00/0000</div>
           <script type="text/javascript">
             function getFormattedDate(daysAhead = 0) {
               const today = new Date();
