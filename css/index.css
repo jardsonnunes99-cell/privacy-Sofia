@@ -23,30 +23,20 @@ body { font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', R
 @media (max-width: 768px) { .nav-container { height: 60px; padding: 0 15px; } .search-container, .nav-icons { display: none; } }
 
 /* ===== MAIN CONTENT ===== */
-.main-container { max-width: 1140px; margin: 0 auto; padding: 20px 15px; }
+.main-container { max-width: 640px; margin: 0 auto; padding: 20px 15px; }
 
-.two-column-layout { display: flex; align-items: flex-start; gap: 30px; position: relative; }
+.two-column-layout { display: block; position: relative; }
 
-/* Sidebar (Left) */
-.left-col { width: 380px; flex-shrink: 0; position: sticky; top: 20px; z-index: 10; }
-
-/* Feed (Right) */
-.right-col { flex-grow: 1; max-width: 600px; margin: 0 auto; }
-
-@media (max-width: 1000px) {
-  .two-column-layout { flex-direction: column; align-items: center; gap: 20px; }
-  .left-col { width: 100%; position: static; max-width: 560px; }
-  .right-col { width: 100%; max-width: 560px; }
-}
+/* Reset de Colunas para Fluxo Único */
+.left-col, .right-col { width: 100%; position: static; max-width: 100%; margin: 0; }
 
 /* ===== COVER (WIDE) ===== */
 .cover-wrapper { max-width: 1140px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
 .cover-image { width: 100%; height: 220px; position: relative; background: #e5e7eb; border-radius: 0 0 16px 16px; overflow: hidden; }
 .cover-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.stats { position: absolute; top: 16px; right: 24px; display: flex; gap: 15px; font-size: 13px; font-weight: 700; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
 
-/* ===== PROFILE OVERVIEW (Dentro da left-col) ===== */
-.profile-info { display: flex; align-items: flex-end; gap: 14px; margin-top: -42px; position: relative; z-index: 21; margin-bottom: 20px; }
+/* ===== PROFILE OVERVIEW ===== */
+.profile-info { display: flex; align-items: flex-end; gap: 14px; margin-top: -42px; position: relative; z-index: 2; margin-bottom: 20px; padding: 0; }
 .profile-image { width: 90px; height: 90px; border-radius: 50%; overflow: hidden; border: 4px solid #fff; background: #e5e7eb; flex-shrink: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
 .profile-image img { width: 100%; height: 100%; object-fit: cover; }
 .profile-text { padding-bottom: 6px; }
