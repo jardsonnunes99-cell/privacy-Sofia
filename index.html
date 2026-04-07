@@ -464,12 +464,21 @@
     .top-bar-content {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 50px;
+      justify-content: center;
+      gap: 12px;
       color: white;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 15px;
+      padding: 6px 15px;
+    }
+    .promo-logo {
+      height: 20px;
+      width: auto;
+    }
+    .privacy-logo {
+      background: none !important;
+      padding: 0 !important;
+      font-size: 13px !important;
     }
 
     .top-bar-content span {
@@ -489,6 +498,15 @@
       font-weight: 600;
       letter-spacing: 0.2px;
     }
+    .cover-image { position: relative; }
+    .cover-image .stats {
+      position: absolute; bottom: 15px; right: 20px;
+      display: flex; align-items: center; gap: 15px;
+      color: #fff; font-size: 14px; font-weight: 700;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .cover-image .stats span { display: flex; align-items: center; gap: 6px; }
+    .cover-image .stats i { font-size: 16px; }
 
     /* Pulse para indicador verde das notificações */
     @keyframes pulse {
@@ -530,10 +548,7 @@
       transition: transform 0.3s ease;
     }
 
-    /* Content Tabs */
-    .content-tabs {
-      /* margin-bottom: 2rem; */
-    }
+
 
     .tabs {
       display: grid;
@@ -587,6 +602,66 @@
       font-weight: 700;
       color: #111827;
       margin: 0 0 10px 0;
+    }
+
+    /* FAQ Accordion Styles */
+    .faq-container {
+      margin-top: 30px;
+      padding: 0 15px;
+    }
+    .faq-titulo {
+      text-align: center;
+      color: #ff6b3d;
+      margin-bottom: 20px;
+    }
+    .faq-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: none;
+      border: none;
+      font-weight: 600;
+      color: #374151;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+    .faq-toggle-icon {
+      font-size: 20px;
+      color: #ff6b3d;
+      font-weight: bold;
+    }
+    .faq-answer {
+      max-height: 0;
+      padding: 0 20px;
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      background: #f9fafb;
+      opacity: 0;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 15px 20px;
+      opacity: 1;
+      border-top: 1px solid #f3f4f6;
+    }
+    .scroller-trigger {
+      cursor: pointer;
+    }
+    .scroller-trigger:hover .locked-media {
+      filter: brightness(0.9);
+      transition: filter 0.2s;
     }
 
     .tag-popular {
@@ -870,10 +945,12 @@
       .lock-bubble { box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
     }
     .stats-pill {
-      position: absolute; bottom: 10px; left: 10px; display: inline-flex; align-items: center; gap: 12px;
-      background: rgba(17,24,39,0.65); color: #fff; padding: 8px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      position: absolute; bottom: 12px; left: 12px; display: inline-flex; align-items: center; gap: 14px;
+      background: rgba(0,0,0,0.65); color: #fff; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700;
+      backdrop-filter: blur(4px);
     }
-    .stats-pill i { margin-right: 6px; }
+    .stats-pill span { display: flex; align-items: center; gap: 6px; }
+    .stats-pill i { font-size: 14px; }
     .feed-footer { display: flex; align-items: center; justify-content: space-around; padding: 10px; color: #6b7280; }
     .feed-footer i { font-size: 16px; }
   /* Força 1 coluna em todas as larguras */
@@ -1233,7 +1310,7 @@
     <nav class="navbar">
       <div class="top-bar">
         <div class="top-bar-content">
-          <img src="images/Untitled%20image%20%2825%29.png" width="100px" alt="Privacy Logo">
+          <img src="images/Untitled%20image%20%2825%29.png" width="90px" alt="Privacy Logo" class="promo-logo">
 
           <!-- Conteúdo Principal -->
           <div class="privacy-logo" id="privacy-logo">ESSA PROMOÇÃO É VÁLIDA ATÉ 03/09/2025</div>
@@ -1249,14 +1326,14 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       const banner = document.getElementById("privacy-logo");
-      const expirationDate = getFormattedDate(0); // Altere o número para mudar os dias
-      banner.textContent = `ESSA PROMOÇÃO É VÁLIDA ATÉ ${expirationDate}`;
+      const expirationDate = getFormattedDate(0); 
+      banner.textContent = `ESSE CONTEÚDO É VÁLIDO ATÉ ${expirationDate}`;
     });
   </script>
         </div>
         <div class="nav-container">
           <div class="logo">
-            <img src="images/privacy-logo.svg" alt="Privacy Logo" width="50" height="50" loading="eager" decoding="async">
+            <img src="images/Untitled%20image%20%2825%29.png" alt="Privacy Logo" width="120" height="auto" loading="eager" decoding="async" style="filter: brightness(0.2);">
           </div>
           <div class="right-container">
             <div class="search-container">
@@ -1409,7 +1486,7 @@ Não perca a chance de ver a Sofia se entregando de verdade.
           </div>
 
           <!-- Galeria estilo feed (2x2) -->
-          <section class="feed-gallery" aria-label="Prévia de conteúdos">
+          <section class="feed-gallery" id="feed-gallery" aria-label="Prévia de conteúdos">
             <div class="feed-grid">
               <!-- Card 1 - Vídeo -->
               <article class="feed-card">
@@ -1420,13 +1497,13 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                     <div class="feed-handle">@sofiaofficial</div>
                   </div>
                 </header>
-                <div class="feed-media">
-                  <video class="locked-media" src="media/video1.mp4" muted="" playsinline="" webkit-playsinline="" autoplay="" loop="" preload="metadata" poster="images/Vem_me_ver.png"></video>
+                <div class="feed-media scroller-trigger" onclick="scrollToPlans()">
+                  <img src="images/imagempagina1.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
-                  <div class="stats-pill">
-                    <span><i class="far fa-heart"></i> 67.4K</span>
-                    <span><i class="far fa-comment"></i> 1.9K</span>
-                  </div>
+                    <div class="stats-pill">
+                      <span><i class="far fa-heart"></i> 67.4K</span>
+                      <span><i class="far fa-comment"></i> 1.9K</span>
+                    </div>
                 </div>
                 <footer class="feed-footer">
                   <i class="far fa-heart"></i>
@@ -1444,8 +1521,8 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                     <div class="feed-handle">@sofiaofficial</div>
                   </div>
                 </header>
-                <div class="feed-media">
-                  <video class="locked-media" src="media/videomelmaia03.mp4" muted="" playsinline="" webkit-playsinline="" autoplay="" loop="" preload="metadata" poster="images/feed2.png"></video>
+                <div class="feed-media scroller-trigger" onclick="scrollToPlans()">
+                  <img src="images/imagempagina2.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
                   <div class="stats-pill">
                     <span><i class="far fa-heart"></i> 89.6K</span>
@@ -1468,8 +1545,8 @@ Não perca a chance de ver a Sofia se entregando de verdade.
                     <div class="feed-handle">@sofiaofficial</div>
                   </div>
                 </header>
-                <div class="feed-media">
-                  <img class="locked-media" src="images/imagempagina2.png" alt="Prévia de foto 1" loading="lazy" decoding="async">
+                <div class="feed-media scroller-trigger" onclick="scrollToPlans()">
+                  <img src="images/imagempagina3.png" class="locked-media" alt="Conteúdo Sofia" loading="lazy" decoding="async">
                   <div class="lock-bubble"><i class="fas fa-lock"></i></div>
                   <div class="stats-pill">
                     <span><i class="far fa-heart"></i> 55.3K</span>
@@ -1497,8 +1574,8 @@ Não perca a chance de ver a Sofia se entregando de verdade.
           <div class="faq-list">
             <div class="faq-item">
               <button class="faq-question">
-                <span class="faq-icon"></span>
-                É sigiloso? Vai aparecer na fatura?
+                <span>É sigiloso? Vai aparecer na fatura?</span>
+                <span class="faq-toggle-icon">+</span>
               </button>
               <div class="faq-answer">
                 Sim, é sigiloso. Cobrança discreta, sem nomes chamativos. Seus dados ficam criptografados.
@@ -1507,8 +1584,8 @@ Não perca a chance de ver a Sofia se entregando de verdade.
 
             <div class="faq-item">
               <button class="faq-question">
-                <span class="faq-icon"></span>
-                Quando tenho acesso depois do pagamento?
+                <span>Quando tenho acesso depois do pagamento?</span>
+                <span class="faq-toggle-icon">+</span>
               </button>
               <div class="faq-answer">
                 Imediato. Pagamento aprovado = liberação em até 10s e e-mail contendo o login de acesso.
@@ -1598,7 +1675,15 @@ Não perca a chance de ver a Sofia se entregando de verdade.
       document.querySelectorAll(".faq-question").forEach((button) => {
         button.addEventListener("click", () => {
           const faqItem = button.parentElement;
+          const icon = button.querySelector(".faq-toggle-icon");
+          
           faqItem.classList.toggle("active");
+          
+          if (faqItem.classList.contains("active")) {
+            icon.textContent = "-";
+          } else {
+            icon.textContent = "+";
+          }
         });
       });
     </script>
@@ -2167,6 +2252,14 @@ Não perca a chance de ver a Sofia se entregando de verdade.
       if (el) el.textContent = String(m).padStart(2,'0')+':'+String(sc).padStart(2,'0');
       if (rem <= 0) clearInterval(_pixTimerInterval);
     }, 1000);
+  }
+
+  // Função para scroll suave até os planos
+  function scrollToPlans() {
+    const plansSec = document.querySelector('.pricing-panel');
+    if (plansSec) {
+      plansSec.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   function _iniciarPolling(identifier) {
